@@ -1,0 +1,43 @@
+"""
+URL configuration for Elearning project.
+
+The `urlpatterns` list routes URLs to views. For more information please see:
+    https://docs.djangoproject.com/en/5.0/topics/http/urls/
+Examples:
+Function views
+    1. Add an import:  from my_app import views
+    2. Add a URL to urlpatterns:  path('', views.home, name='home')
+Class-based views
+    1. Add an import:  from other_app.views import Home
+    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
+Including another URLconf
+    1. Import the include() function: from django.urls import include, path
+    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+"""
+from django.contrib import admin
+from django.urls import path
+from Elearn_app import views
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('',views.index,name='home'),
+    path('home2',views.indexc,name='home2'),
+    path('logout',views.logout_view,name='logout'),
+    path('login',views.user_login,name='login'),
+    path('signup',views.signup,name='signup'),
+    path('courses',views.courses_view,name='courses'),
+    path('course1',views.course1,name='course1'),
+    path('course2',views.course2,name='course2'),
+    path('course3',views.course3,name='course3'),
+    path('contact',views.contact,name='contact'),
+    path('about',views.about,name='about'),
+    path('pages',views.pages,name='pages'),
+    path('quiz',views.quiz,name='quiz'),
+    path('quiz_html',views.quiz_html,name='quiz_html'),
+    path('quiz_css',views.quiz_css,name='quiz_css'),
+    path('quiz_js',views.quiz_js,name='quiz_js'),
+    path('quiz_py',views.quiz_py,name='quiz_py'),
+
+    path('enroll/<int:course_id>/',views.enroll_view,name='enroll'),
+
+]
